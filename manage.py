@@ -1,7 +1,7 @@
 import os
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
-#if we want the migrate from python to postgres we need all tables in here
+#if we want the migrate from python to postgres we need all tables in here necesary
 from src.models.BlogpostModel import *
 from src.models.UserModel import *
 
