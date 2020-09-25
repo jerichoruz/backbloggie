@@ -2,7 +2,7 @@
 from marshmallow import fields, Schema
 import datetime
 from . import db
-#from ..app import bcrypt
+from ..app import bcrypt
 from .BlogpostModel import BlogpostSchema
 
 class UserModel(db.Model):
@@ -80,11 +80,11 @@ class UserModel(db.Model):
         db.session.delete(self)
         db.session.commit()
 
-    # def __generate_hash(self, password):
-    #     return bcrypt.generate_password_hash(password, rounds=10).decode("utf-8")
+    def __generate_hash(self, password):
+        return bcrypt.generate_password_hash(password, rounds=10).decode("utf-8")
     
-    # def check_hash(self, password):
-    #     return bcrypt.check_password_hash(self.password, password)
+    def check_hash(self, password):
+        return bcrypt.check_password_hash(self.password, password)
 
     @staticmethod
     def get_all_users():
