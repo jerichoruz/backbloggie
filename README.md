@@ -7,10 +7,10 @@
   - Install all required dependencies with `$ pipenv install`
   - Rename .env.sample to .env and edit variables
       ```
-      $ FLASK_ENV=development
-      $ FLASK_PORT=5005
-      $ DATABASE_URL=postgres://fido:fido@localhost:5432/fido
-      $ JWT_SECRET_KEY=pass_salt_phrase
+      FLASK_ENV=development
+      FLASK_PORT=5005
+      DATABASE_URL=postgres://fido:fido@localhost:5432/fido
+      JWT_SECRET_KEY=pass_salt_phrase
       ```
   - Create database fido
   - `$ python manage.py db init`
