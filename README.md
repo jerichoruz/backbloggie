@@ -1,14 +1,20 @@
 ## Installation
   - Install [Python](https://www.python.org/downloads/), [Pipenv](https://docs.pipenv.org/) and [Postgres](https://www.postgresql.org/) on your machine
-  - Clone the repository `$ git clone https://github.com/jerichoruz/blogapi-tutorial.git`
-  - Change into the directory `$ cd /blog_api`
+  - Clone the repository `$ git clone git@github.com:jerichoruz/fido-back.git`
+  - Change into the directory `$ cd /fido-back`
+  - Create the project virtual environment with `$ pipenv --three` command
   - Activate the project virtual environment with `$ pipenv shell` command
   - Install all required dependencies with `$ pipenv install`
-  - Export the required environment variables
+  - Rename .env.sample to .env and edit variables
       ```
-      $ export FLASK_ENV=development
-      $ export FLASK_PORT=5005
-      $ export DATABASE_URL=postgres://name:password@houst:port/blog_api_db
-      $ export JWT_SECRET_KEY=es_secreto
+      FLASK_ENV=development
+      FLASK_PORT=5005
+      DATABASE_URL=postgres://fido:fido@localhost:5432/fido
+      JWT_SECRET_KEY=pass_salt_phrase
       ```
+  - Create database fido
+  - `$ python manage.py db init`
+  - `$ python manage.py db migrate`
+  - `$ python manage.py db upgrade`
+  
   - Start the app with `python run.py`
