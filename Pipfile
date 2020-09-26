@@ -16,6 +16,7 @@ flask-bcrypt = "*"
 pyjwt = "*"
 gunicorn = "*"
 python-dotenv = "*"
+flask-cors = "*"
 
 [requires]
 python_version = "3.6"
