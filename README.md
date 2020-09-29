@@ -1,7 +1,7 @@
 ## Installation
   - Install [Python](https://www.python.org/downloads/), [Pipenv](https://docs.pipenv.org/) and [Postgres](https://www.postgresql.org/) on your machine
   - Clone the repository `$ git clone git@github.com:jerichoruz/backbloggie.git`
-  - Change into the directory `$ cd /fido-back`
+  - Change into the directory `$ cd /backbloggie`
   - Create the project virtual environment with `$ pipenv --three` command
   - Activate the project virtual environment with `$ pipenv shell` command
   - Install all required dependencies with `$ pipenv install`
