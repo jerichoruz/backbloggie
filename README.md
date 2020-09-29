@@ -1,6 +1,6 @@
 ## Installation
   - Install [Python](https://www.python.org/downloads/), [Pipenv](https://docs.pipenv.org/) and [Postgres](https://www.postgresql.org/) on your machine
-  - Clone the repository `$ git clone git@github.com:jerichoruz/fido-back.git`
+  - Clone the repository `$ git clone git@github.com:jerichoruz/backbloggie.git`
   - Change into the directory `$ cd /fido-back`
   - Create the project virtual environment with `$ pipenv --three` command
   - Activate the project virtual environment with `$ pipenv shell` command
@@ -9,7 +9,7 @@
       ```
       FLASK_ENV=development
       FLASK_PORT=5005
-      DATABASE_URL=postgres://fido:fido@localhost:5432/fido
+      DATABASE_URL=postgres://user:pass@localhost:5432/bd
       JWT_SECRET_KEY=pass_salt_phrase
       ```
   - Create database fido
