@@ -18,3 +18,6 @@
   - `$ python manage.py db upgrade`
   
   - Start the app with `python run.py`
+   
+## Where should I host My web app?
+The ideal VPS for open community web apps in México https://conectika.tech/standar-vps
