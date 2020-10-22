@@ -121,9 +121,10 @@ def update():
     Update me
     """
     req_data = request.get_json()
-    data, error = user_schema.load(req_data, partial=True)
-    if error:
-        return custom_response(error, 400)
+    try:
+        data = user_schema.load(req_data, partial=True)
+    except ValidationError as err:
+        return custom_response(err, 400)
 
     user = UserModel.get_one_user(g.user.get('id'))
     user.update(data)
