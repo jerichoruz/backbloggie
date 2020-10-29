@@ -13,6 +13,14 @@
       JWT_SECRET_KEY=pass_salt_phrase
       ```
   - Create database fido
+  - Due to a bad flask relation please Comment line 5 from UserModel before Migrate
+      ```
+      1 # src/models/UserModel.py
+      2 from marshmallow import fields, Schema
+      3 import datetime
+      4 from . import db
+      5 #from ..app import bcrypt #after  python manage.py db upgrade uncomment to execute python run.py
+      ```
   - `$ python manage.py db init`
   - `$ python manage.py db migrate`
   - `$ python manage.py db upgrade`
