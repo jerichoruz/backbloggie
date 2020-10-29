@@ -24,6 +24,14 @@
   - `$ python manage.py db init`
   - `$ python manage.py db migrate`
   - `$ python manage.py db upgrade`
+  - it should look like this
+      ```
+      1 # src/models/UserModel.py
+      2 from marshmallow import fields, Schema
+      3 import datetime
+      4 from . import db
+      5 from ..app import bcrypt #after  python manage.py db upgrade uncomment to execute python run.py
+      ```
   
   - Start the app with `python run.py`
    
