@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="paypal-button"></div>
+
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
+<script>
+    var CREATE_PAYMENT_URL  = 'http://localhost:5005/api/v1/payment/paypal/create';
+    var EXECUTE_PAYMENT_URL = 'http://localhost:5005/api/v1/payment/paypal/execute';
+
+    paypal.Button.render({
+
+        env: 'sandbox', // 'sandbox' || 'production'
+
+        commit: true, // Show a 'Pay Now' button
+		
+        payment: function() {
+			return paypal.request({
+				method: 'post',
+				url: CREATE_PAYMENT_URL,
+				headers: {
+				"api-token":"AQUI VA EL TOKEN DEL SERVICIO LOGIN",
+				},
+				json: {
+					quantity: 2 //cambiar por la cantidad de items comprados
+				}
+			}).then(function(data) {
+				return data.paymentID;
+			})
+        },
+
+        onAuthorize: function(data) {
+			return paypal.request({
+				method: 'post',
+				url: EXECUTE_PAYMENT_URL,
+				headers: {
+				"api-token":"AQUI VA EL TOKEN DEL SERVICIO LOGIN",
+				},
+				json: {
+					paymentID: data.paymentID,
+					payerID:   data.payerID,
+					quantity: 2
+				}
+			}).then(function(res) {
+				console.log(res.success)
+			})
+        }
+
+    }, '#paypal-button');
+</script>
+</body>
+</html>

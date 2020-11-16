@@ -17,6 +17,7 @@ pyjwt = "*"
 gunicorn = "*"
 python-dotenv = "*"
 flask-cors = "*"
+paypalrestsdk = "*"
 
 [requires]
 python_version = "3.6"

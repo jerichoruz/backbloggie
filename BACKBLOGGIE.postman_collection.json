@@ -1,0 +1,526 @@
+{
+	"info": {
+		"_postman_id": "2ae92608-963b-4eb7-8ddc-0e871c1d44de",
+		"name": "BACKBLOGGIE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"JERICHO\",\r\n    \"apaterno\": \"RUZ\",\r\n    \"amaterno\": \"\",\r\n    \"rfc\": \"jiur589317cu4\",\r\n    \"avatar\": \"{{avatar}}\",\r\n    \"phone\": \"55555555\",\r\n    \"moral\": \"False\",\r\n    \"admin\": \"False\",\r\n    \"tokenfg\": \"\",\r\n    \"street\": \"Calle\",\r\n    \"int_no\": \"\",\r\n    \"ext_no\": \"66\",\r\n    \"phone\" : \"4444444444\",\r\n    \"suburb\": \"Colonia Estrella\",\r\n    \"country\": \"México\",\r\n    \"state\": \"CDMX\",\r\n    \"city\": \"Ciudad de México\",\r\n    \"cp\": \"07330\",\r\n\t\"email\": \"user@fido.mx\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{desa}}/api/v1/users/",
+					"host": [
+						"{{desa}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"email\":\"user@fido.mx\",\r\n\t\"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{desa}}/api/v1/users/login",
+					"host": [
+						"{{desa}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login face google.",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"email\":\"user@gmail.com\",\r\n\t\"tokenfg\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDA5ODIwNDcsImlhdCI6MTYwMDg5NTY0Nywic3ViIjozfQ.s4XnUtvBKttxP7BUJKinYaIDlBpojT0F728H7RQr_mM\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{desa}}/api/v1/users/loginfg",
+					"host": [
+						"{{desa}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"loginfg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "me",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api-token",
+						"type": "text",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDQ4NjYyMjUsImlhdCI6MTYwNDc3OTgyNSwic3ViIjoxfQ.ypVASoyLn5iikejKbJssazB7h8HbQcevSNOqcomDT-s"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{fido}}/api/v1/users/me",
+					"host": [
+						"{{fido}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "me",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "api-token",
+						"type": "text",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDQ4NjYyMjUsImlhdCI6MTYwNDc3OTgyNSwic3ViIjoxfQ.ypVASoyLn5iikejKbJssazB7h8HbQcevSNOqcomDT-s"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amaterno\": \"de la Borbolla y Rondero\",\r\n    \"apaterno\": \"Flores\",\r\n    \"avatar\": \"{{avtar}}\",\r\n    \"city\": \"Ciudad de México\",\r\n    \"country\": \"México\",\r\n    \"cp\": \"07330\",\r\n    \"email\": \"user@gmail.com\",\r\n    \"ext_no\": \"66\",\r\n    \"int_no\": \"\",\r\n    \"moral\": false,\r\n    \"name\": \"NAcho\",\r\n    \"phone\": 44444444.0,\r\n    \"rfc\": \"jiur589317cu4\",\r\n    \"state\": \"CDMX\",\r\n    \"street\": \"Calle\",\r\n    \"suburb\": \"Colonia Estrella\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{desa}}/api/v1/users/me",
+					"host": [
+						"{{desa}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete me",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "api-token",
+						"type": "text",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDA5ODIwNDcsImlhdCI6MTYwMDg5NTY0Nywic3ViIjozfQ.s4XnUtvBKttxP7BUJKinYaIDlBpojT0F728H7RQr_mM"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{desa}}/api/v1/users/me",
+					"host": [
+						"{{desa}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "info id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDEwODI0MzEsImlhdCI6MTYwMDk5NjAzMSwic3ViIjoxfQ.Cj4rkjnhmO9SvlNQoaA1AK7BvbBaAS8OI5NbuKUwkEQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{desa}}/api/v1/users/1",
+					"host": [
+						"{{desa}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Users all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDU2Mzg3MTEsImlhdCI6MTYwNTU1MjMxMSwic3ViIjoyfQ.0rl7GHOd1q4Kx7ZbFYATt7WlPb6KUPn70bO-PCeP00k",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Jericho\",\r\n    \"apaterno\":\"Ruz\",\r\n\t\"email\":\"user@gmail.com\",\r\n\t\"password\":\"Pass123!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{desa}}/api/v1/users/",
+					"host": [
+						"{{desa}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "blog create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api-token",
+						"type": "text",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDA5ODIwNDcsImlhdCI6MTYwMDg5NTY0Nywic3ViIjozfQ.s4XnUtvBKttxP7BUJKinYaIDlBpojT0F728H7RQr_mM"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Mi primer contrato\",\r\n    \"contents\":\"kjash dfjghas djghajf djasvkjsdjhsdfasd kjhfgdkshfgkjsdfgmk asdfhasdfgkhfasdghsdfgjfasdsdafkjhasfdkjlasdffkjhdfkvg dkjfvjhv dfv sd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{desa}}/api/v1/blogpost/",
+					"host": [
+						"{{desa}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"blogpost",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "blog getall",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{desa}}/api/v1/blogpost/",
+					"host": [
+						"{{desa}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"blogpost",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "paypal payment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api-token",
+						"type": "text",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDUxNDk1MDQsImlhdCI6MTYwNTA2MzEwNCwic3ViIjoxfQ.IWRAlu0kaqZIYPunNP17GA6UvCHYOebQWU88QJlt-Wo"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "Para este mejor revisar la pagina en raíz del proyecto backbloggie - standalone_html_paypal_test_button.html",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{desa}}/api/v1/payment/paypal/create",
+					"host": [
+						"{{desa}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"payment",
+						"paypal",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api-token",
+						"type": "text",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDA4MDI1NzYsImlhdCI6MTYwMDcxNjE3Niwic3ViIjozfQ.tbG1RH-SrUmHhMg74XMw2wGqWaPEihOZHnpy-FpBepo"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{desa}}/api/v1/blogpost/1",
+					"host": [
+						"{{desa}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"blogpost",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update blog",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "api-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDA5ODIwNDcsImlhdCI6MTYwMDg5NTY0Nywic3ViIjozfQ.s4XnUtvBKttxP7BUJKinYaIDlBpojT0F728H7RQr_mM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Mi primer contrato\",\r\n    \"contents\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{hero}}/api/v1/blogposts/1",
+					"host": [
+						"{{hero}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"blogposts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete blog",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "api-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDA5ODIwNDcsImlhdCI6MTYwMDg5NTY0Nywic3ViIjozfQ.s4XnUtvBKttxP7BUJKinYaIDlBpojT0F728H7RQr_mM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{hero}}/api/v1/blogposts/1",
+					"host": [
+						"{{hero}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"blogposts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "983e297b-3163-4124-9122-5bf646a91768",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "c1037f20-3c59-45d3-bc02-4c5f9f205aba",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "4e848d3c-ea8f-4591-8318-f3a17f39837c",
+			"key": "desa",
+			"value": "http://192.168.0.8:5005"
+		},
+		{
+			"id": "004ad680-602b-4da0-8dc4-8d561aacb280",
+			"key": "avatar",
+			"value": "/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFB..."
+		}
+	],
+	"protocolProfileBehavior": {}
+}

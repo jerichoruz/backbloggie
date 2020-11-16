@@ -33,6 +33,7 @@ class UserModel(db.Model):
     cp = db.Column(db.Integer)
     email = db.Column(db.String(128), unique=True, nullable=False)
     password = db.Column(db.String(128), nullable=True)
+    items_paid = db.Column(db.Integer, default=0)
     created_at = db.Column(db.DateTime)
     modified_at = db.Column(db.DateTime)
     blogposts = db.relationship('BlogpostModel', backref='users', lazy=True)
@@ -61,6 +62,7 @@ class UserModel(db.Model):
         self.cp = data.get('cp')
         self.email = data.get('email')
         self.password = self.__generate_hash(data.get('password'))
+        self.items_paid = data.get('items_paid')
         self.created_at = datetime.datetime.utcnow()
         self.modified_at = datetime.datetime.utcnow()
 
@@ -125,6 +127,7 @@ class UserSchema(Schema):
     cp = fields.Int()
     email = fields.Email(required=True)
     password = fields.Str(required=True)
+    items_paid = fields.Int()
     created_at = fields.DateTime(dump_only=True)
     modified_at = fields.DateTime(dump_only=True)
     blogposts = fields.Nested(BlogpostSchema, many=True)
