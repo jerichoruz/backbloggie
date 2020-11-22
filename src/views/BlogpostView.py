@@ -2,7 +2,9 @@
 from flask import Flask, request, g, Blueprint, json, Response
 from marshmallow import ValidationError
 from ..shared.Authentication import Auth
+from ..shared.Mailing import Mailing
 from ..models.BlogpostModel import BlogpostModel, BlogpostSchema
+from ..models.UserModel import UserModel
 
 app = Flask(__name__)
 blogpost_api = Blueprint('blogpost_api', __name__)
@@ -37,8 +39,8 @@ def create():
     """
     req_data = request.get_json()
     app.logger.info('llega siquiera blog--------------#'+json.dumps(req_data))
-    
-    req_data['owner_id'] = g.user.get('id')
+    user = UserModel.get_one_user(g.user.get('id'))
+    req_data['owner_id'] = user.id
 
     try:
         data = blogpost_schema.load(req_data)
@@ -47,6 +49,11 @@ def create():
         
     post = BlogpostModel(data)
     post.save()
+    try:
+        app.logger.info('llego al correo ?------ ')
+        Mailing.send_mail(user)
+    except Exception as e:
+        app.logger.error(e)
     data = blogpost_schema.dump(post)
     return custom_response(data, 201)    
 
