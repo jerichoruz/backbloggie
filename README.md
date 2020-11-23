@@ -21,6 +21,13 @@
     - To know where to get your paypal id & secret got to https://conectika.tech/blog/conectika-tech-1/post/como-obtener-el-id-de-cliente-y-la-clave-secreta-de-paypal-15
 
   - Create database blog
+      ```
+      $ sudo su - postgres -c "createuser -s bloguser" 2> /dev/null || true
+      $ psql
+      # ALTER USER bloguser WITH ENCRYPTED PASSWORD 'bloguser';
+      # CREATE DATABASE blog WITH TEMPLATE template0;
+      # ALTER DATABASE blog OWNER TO bloguser;
+      ```
   - Due to a bad flask relation please Comment line 5 from UserModel before Migrate
       ```
       1 # src/models/UserModel.py
