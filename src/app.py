@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_cors import CORS
+from flask_migrate import Migrate
 
 from .config import app_config
 from .models import db, bcrypt
@@ -27,6 +28,8 @@ def create_app(env_name):
 
   db.init_app(app)
 
+  migrate = Migrate(app, db)
+
   app.register_blueprint(user_blueprint, url_prefix='/api/v1/users')
   app.register_blueprint(blogpost_blueprint, url_prefix='/api/v1/blogposts')
   app.register_blueprint(payment_blueprint, url_prefix='/api/v1/payment')
@@ -36,7 +39,7 @@ def create_app(env_name):
     """
     example endpoint
     """
-    app.logger.info('Mostrando los posts del blog')
-    return 'Felicitaciones! Tu primer ruta esta funcionando por el puerto 5005'
+    app.logger.info('Portada de tu app')
+    return 'Felicitaciones! Tu primer ruta esta funcionando por el puerto 5005' + str(migrate)
 
   return app

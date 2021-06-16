@@ -22,31 +22,15 @@
 
   - Create database blog
       ```
-      $ sudo su - postgres -c "createuser -s bloguser" 2> /dev/null || true
+      $ sudo su - postgres -c "createuser -s blog" 2> /dev/null || true
       $ psql
-      # ALTER USER bloguser WITH ENCRYPTED PASSWORD 'bloguser';
+      # ALTER USER bloguser WITH ENCRYPTED PASSWORD 'blog';
       # CREATE DATABASE blog WITH TEMPLATE template0;
-      # ALTER DATABASE blog OWNER TO bloguser;
+      # ALTER DATABASE blog OWNER TO blog;
       ```
-  - Due to a bad flask relation please Comment line 5 from UserModel before Migrate
-      ```
-      1 # src/models/UserModel.py
-      2 from marshmallow import fields, Schema
-      3 import datetime
-      4 from . import db
-      5 #from ..app import bcrypt #after  python manage.py db upgrade uncomment to execute python run.py
-      ```
-  - `$ python manage.py db init`
-  - `$ python manage.py db migrate`
-  - `$ python manage.py db upgrade`
-  - it should look like this
-      ```
-      1 # src/models/UserModel.py
-      2 from marshmallow import fields, Schema
-      3 import datetime
-      4 from . import db
-      5 from ..app import bcrypt #after  python manage.py db upgrade uncomment to execute python run.py
-      ```
+  - `$ flask db init`
+  - `$ flask db migrate`
+  - `$ flask db upgrade`
   
   - Start the app with `python run.py`
   - File BACKBLOGGIE.postman_collection.json its a Postman collection just import for test your backend

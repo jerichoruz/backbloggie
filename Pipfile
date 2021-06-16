@@ -12,7 +12,6 @@ psycopg2-binary = "*"
 flask-migrate = "*"
 flask-script = "*"
 marshmallow = "*"
-flask-bcrypt = "*"
 pyjwt = "*"
 gunicorn = "*"
 python-dotenv = "*"
@@ -21,4 +20,4 @@ paypalrestsdk = "*"
 flask-mail = "*"
 
 [requires]
-python_version = "3.6"
+python_version = "*"
